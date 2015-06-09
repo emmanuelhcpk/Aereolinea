@@ -1,0 +1,22 @@
+<%= form_for(@vuelo) do |f| %>
+  <% if @vuelo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@vuelo.errors.count, "error") %> prohibited this vuelo from being saved:</h2>
+
+      <ul>
+      <% @vuelo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :descripcion%>
+   <%= f.text_field :descripcion %>
+  </div>
+  <div class="actions form-group">
+    <%= f.submit %>
+  </div>
+<% end %>

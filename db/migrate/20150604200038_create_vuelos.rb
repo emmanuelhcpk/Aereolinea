@@ -5,6 +5,8 @@ class CreateVuelos < ActiveRecord::Migration
     	t.datetime :salida
     	t.datetime	:llegada
       t.string	:descripcion
+      t.string	:ciudad_destino
+      t.string	:ciudad_origen
       t.timestamps null: false
     end
   end

@@ -28,16 +28,17 @@ ActiveRecord::Schema.define(version: 20150604200038) do
   end
 
   create_table "socios", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.boolean  "admin",                  default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -49,8 +50,10 @@ ActiveRecord::Schema.define(version: 20150604200038) do
     t.datetime "salida"
     t.datetime "llegada"
     t.string   "descripcion"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "ciudad_destino"
+    t.string   "ciudad_origen"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
 end
