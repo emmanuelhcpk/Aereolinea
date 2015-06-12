@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :vuelos
   resources :sillas
+  resources :reservas
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

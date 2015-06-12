@@ -11,6 +11,7 @@ class VuelosController < ApplicationController
   # GET /vuelos/1.json
   def show
     @silla = Silla.new
+    @reserva = Reserva.new
   end
 
   # GET /vuelos/new

@@ -2,8 +2,8 @@ class ReservasController < ApplicationController
     
     def create
         @reserva = Reserva.new(reserva_params)
-        if   @reserva.valid?
-            @reserva.save
+        if  @reserva.valid?
+                @reserva.save
             #funcion=@reserva.funcion
              #redirect_to funcion
         else
