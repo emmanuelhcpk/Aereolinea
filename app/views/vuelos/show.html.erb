@@ -2,12 +2,16 @@
 <div class="container panel">
     <div class="row">
 		  <div class="col-md-4 col-md-offset-4 ">
-     	
-    			<h1><%=@vuelo.descripcion%></h1>
+        <h1>Vuelo #<%=@vuelo.id%></h1>
+     	<h3>Ciudad Destino: <%=@vuelo.ciudad_destino%></h3>
+          <h3>Ciudad Origen: <%=@vuelo.ciudad_origen%></h3>
+    			<p>Descripcion: <%=@vuelo.descripcion%></p>
+          
     <%if socio_signed_in?&&es_admin? %>
     	 <%= form_for(@silla) do |f| %>
       <% if @silla.errors.any? %>
         <div id="error_explanation">
+
             <h2><%= pluralize(@silla.errors.count, "error") %> prohibited this silla from being saved:</h2>
 
             <ul>
@@ -19,19 +23,21 @@
           <% end %>
 
         <div class="actions">
-
-
+          <div class="form-group">
+          <%= f.submit %>
+          </div>
           <%= f.submit %>
         </div>
-
       <% end %>
       <%elsif(socio_signed_in?)%>
          <%= form_for(@reserva) do |f| %>
-          <%= f.submit %>
+         
+         
+          <%= f.submit :reservar%>
          <%end%>
       <%end%>
 
-    			<p id="notice"><%= notice %></p>
+    			
 
     			<%= link_to 'Edit', edit_vuelo_path(@vuelo) %> |
     			<%= link_to 'Back', vuelos_path %>

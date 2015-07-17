@@ -1,0 +1,9 @@
+<%= #f.label :silla_a_reservar %>   
+            <%=# f.select(:silla_id) do %>
+
+            <% #@sillas.each do|a|%>
+
+            <%= #content_tag(:option, a.id, value: a.id) %>
+
+           <% #end %>
+           <% #end %>

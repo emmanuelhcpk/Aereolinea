@@ -13,8 +13,24 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :descripcion%>
-   <%= f.text_field :descripcion %>
+     <%= f.label :descripcion%>
+     <%= f.text_field :descripcion %>
+  </div>
+  <div class="form-group">
+    <%= f.label :ciudad_destino %><br>
+    <%= f.text_field :ciudad_destino %>
+  </div>
+  <div class="form-group">
+    <%= f.label :ciudad_origen%><br>
+    <%= f.text_field :ciudad_origen %>
+  </div>
+  <div class="form-group">
+    <%= f.label :fecha_salida %><br>
+    <%= f.datetime_select :salida %>
+  </div>
+  <div class="form-group">
+    <%= f.label :fecha_llegada %><br>
+    <%= f.datetime_select :llegada %>
   </div>
   <div class="actions form-group">
     <%= f.submit %>

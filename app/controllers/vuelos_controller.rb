@@ -1,6 +1,6 @@
 class VuelosController < ApplicationController
   before_action :set_vuelo, only: [:show, :edit, :update, :destroy]
-  before_action :es_admin2?, only: [:create,:new,:edit, :update, :destroy]
+  #before_action :es_admin2?, only: [:create,:new,:edit, :update, :destroy]
   # GET /vuelos
   # GET /vuelos.json
   def index
@@ -11,6 +11,7 @@ class VuelosController < ApplicationController
   # GET /vuelos/1.json
   def show
     @silla = Silla.new
+    @sillas = @vuelo.sillas.all
     @reserva = Reserva.new
   end
 
@@ -71,6 +72,6 @@ class VuelosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vuelo_params
-     params.require(:vuelo).permit(:descripcion)
+     params.require(:vuelo).permit(:descripcion,:llegada,:salida,:ciudad_destino,:ciudad_origen)
     end
 end
